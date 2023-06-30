@@ -1,6 +1,6 @@
 import { ProductItemType } from "@/contexts/ProductProvider";
 
-const ItemProduct = ({ title, price, image }: ProductItemType) => {
+const ItemProduct = ({ title, price, image }: Partial<ProductItemType>) => {
   return (
     <div className="min-w-[250px] flex flex-col space-y-4 items-center py-8 ">
       <div className="bg-[#EBEBEB] py-10 px-8 rounded-[5px]">
@@ -13,7 +13,7 @@ const ItemProduct = ({ title, price, image }: ProductItemType) => {
           {new Intl.NumberFormat("en-US", {
             currency: "USD",
             style: "currency",
-          }).format(price)}
+          }).format(price as unknown as number)}
         </h4>
       </div>
     </div>

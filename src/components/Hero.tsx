@@ -20,7 +20,7 @@ const Hero = () => {
   }, [emblaApi]);
 
   const scrollTo = useCallback(
-    (index) => emblaApi && emblaApi.scrollTo(index),
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi]
   );
 

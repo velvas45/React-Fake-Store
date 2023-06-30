@@ -1,6 +1,6 @@
 type ButtonPropsType = {
   text: string;
-  selected: boolean;
+  selected?: boolean;
   onClicked: () => void;
 };
 

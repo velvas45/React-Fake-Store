@@ -13,7 +13,7 @@ export type CategoryItemType = string[];
 
 type ProductStateType = {
   products: ProductItemType[];
-  categories: CategoryItemType[];
+  categories: CategoryItemType;
   selectedCategory: string;
 };
 
@@ -36,7 +36,7 @@ export type ReducerAction = {
     product?: ProductItemType;
     products?: ProductItemType[];
     category?: CategoryItemType;
-    categories?: CategoryItemType[];
+    categories?: CategoryItemType;
     selectedCategory?: string;
   };
 };
@@ -74,7 +74,7 @@ const reducer = (
       //   set data from api
       return {
         ...state,
-        categories: action.payload.category ? [action.payload.category] : [],
+        categories: action.payload.category ? [...action.payload.category] : [],
       };
     case REDUCER_ACTION_TYPE.SETSELECTEDCATEGORY:
       if (!action.payload)

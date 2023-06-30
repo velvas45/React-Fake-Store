@@ -1,5 +1,5 @@
 import useProduct from "@/hooks/useProduct";
-import ItemProduct from "./itemProduct";
+import ItemProduct from "./ItemProduct";
 
 const ListProduct = () => {
   const { selectedCategory, products } = useProduct();

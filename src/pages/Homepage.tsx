@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import useProduct from "@/hooks/useProduct";
 import { getProducts, getCategories } from "@/utils/fetchData";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Hero from "@/components/Hero";
 import Categories from "@/components/Categories";
 import ListProduct from "@/components/ListProduct";
+import { CategoryItemType } from "@/contexts/ProductProvider";
 
 function Dashboard() {
-  const { dispatch, REDUCER_ACTIONS, products, categories } = useProduct();
+  const { dispatch, REDUCER_ACTIONS } = useProduct();
 
   useEffect(() => {
     const getData = async () => {
@@ -21,7 +21,7 @@ function Dashboard() {
       dispatch({
         type: REDUCER_ACTIONS.GETCATEGORIES,
         payload: {
-          categories: newCategories,
+          categories: newCategories as CategoryItemType,
         },
       });
       dispatch({

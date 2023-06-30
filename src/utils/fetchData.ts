@@ -19,7 +19,7 @@ export const postLogin = async (dtLogin: {
   email: string;
   password: string;
 }) => {
-  const res = await client.post<ProductItemType[]>(`/auth/login`, {
+  const res = await client.post<{ token: string }>(`/auth/login`, {
     username: dtLogin.email,
     password: dtLogin.password,
   });
