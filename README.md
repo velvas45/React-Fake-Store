@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/velvas45/React-Fake-Store">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -34,7 +34,7 @@
     <a href="https://github.com/velvas45/React-Fake-Store"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://react-fake-store-mm1o.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/velvas45/React-Fake-Store/issues">Report Bug</a>
     ·

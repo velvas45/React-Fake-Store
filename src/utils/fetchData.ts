@@ -10,9 +10,14 @@ export const getCategories = async () => {
   return res.data;
 };
 export const getProductByCategory = async (typeCategory: string) => {
-  const res = await client.get<ProductItemType[]>(
-    `/products/category/${typeCategory}`
-  );
+  let res;
+  if (typeCategory === "All Categories") {
+    res = await client.get<ProductItemType[]>("/products");
+  } else {
+    res = await client.get<ProductItemType[]>(
+      `/products/category/${typeCategory}`
+    );
+  }
   return res.data;
 };
 export const postLogin = async (dtLogin: {
