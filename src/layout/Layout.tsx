@@ -1,19 +1,22 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "@/pages/Dashboard";
+import Homepage from "@/pages/Homepage";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Login from "@/pages/Login";
 
 const Layout = () => {
   return (
-    <div>
-      <div>
+    <div className="w-full">
+      <div className="px-[133px] pt-[55px]">
         <Header />
-        <div className="">
+        <div className="mt-8">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };

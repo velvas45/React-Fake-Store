@@ -9,8 +9,12 @@ export type ProductItemType = {
   image: string;
 };
 
+export type CategoryItemType = string[];
+
 type ProductStateType = {
   products: ProductItemType[];
+  categories: CategoryItemType[];
+  selectedCategory: string;
 };
 
 type ChildrenType = {
@@ -20,6 +24,9 @@ type ChildrenType = {
 const REDUCER_ACTION_TYPE = {
   GETPRODUCTS: "GETPRODUCTS",
   GETPRODUCT: "GETPRODUCT",
+  GETCATEGORIES: "GETCATEGORIES",
+  GETCATEGORY: "GETCATEGORY",
+  SETSELECTEDCATEGORY: "SETSELECTEDCATEGORY",
 };
 
 export type ReducerActionType = typeof REDUCER_ACTION_TYPE;
@@ -28,6 +35,9 @@ export type ReducerAction = {
   payload?: {
     product?: ProductItemType;
     products?: ProductItemType[];
+    category?: CategoryItemType;
+    categories?: CategoryItemType[];
+    selectedCategory?: string;
   };
 };
 
@@ -50,6 +60,30 @@ const reducer = (
         ...state,
         products: action.payload.product ? [action.payload.product] : [],
       };
+    case REDUCER_ACTION_TYPE.GETCATEGORIES:
+      if (!action.payload)
+        throw new Error("action.payload missing in GETCATEGORIES");
+      //   set data from api
+      return {
+        ...state,
+        categories: action.payload.categories || [],
+      };
+    case REDUCER_ACTION_TYPE.GETCATEGORY:
+      if (!action.payload)
+        throw new Error("action.payload missing in GETCATEGORY");
+      //   set data from api
+      return {
+        ...state,
+        categories: action.payload.category ? [action.payload.category] : [],
+      };
+    case REDUCER_ACTION_TYPE.SETSELECTEDCATEGORY:
+      if (!action.payload)
+        throw new Error("action.payload missing in SETSELECTEDCATEGORY");
+      //   set data from api
+      return {
+        ...state,
+        selectedCategory: action.payload.selectedCategory || "",
+      };
 
     default:
       throw new Error("Unidentify reducer action type");
@@ -67,6 +101,8 @@ const useProductContext = (initProduct: ProductStateType) => {
     products: state.products,
     REDUCER_ACTIONS,
     dispatch,
+    categories: state.categories,
+    selectedCategory: state.selectedCategory,
   };
 };
 
@@ -76,13 +112,19 @@ const initProductContextState: UseProductContextType = {
   REDUCER_ACTIONS: REDUCER_ACTION_TYPE,
   dispatch: () => {},
   products: [],
+  categories: [],
+  selectedCategory: "All Categories",
 };
 
 export const ProductContext = createContext<UseProductContextType>(
   initProductContextState as UseProductContextType
 );
 
-const initialProductState: ProductStateType = { products: [] };
+const initialProductState: ProductStateType = {
+  products: [],
+  categories: [],
+  selectedCategory: "All Categories",
+};
 
 export const ProductProvider = ({ children }: ChildrenType): ReactElement => {
   const contextValue = useProductContext(initialProductState);
