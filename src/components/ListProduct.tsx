@@ -7,7 +7,7 @@ const ListProduct = () => {
   return (
     <div className="mt-6">
       <h4 className="text-black text-2xl font-bold">{selectedCategory}</h4>
-      <div className="mt-4 flex items-center gap-6 overflow-x-auto max-w-[82vw]">
+      <div className="mt-4 flex items-center gap-6 overflow-x-auto min-w-full max-w-full">
         {products &&
           products.map((product) => (
             <ItemProduct

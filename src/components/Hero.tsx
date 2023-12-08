@@ -45,32 +45,44 @@ const Hero = () => {
   }, [emblaApi, onInit, onSelect]);
 
   return (
-    <div className="relative rounded-[10px]">
-      <div className="absolute top-[50%] z-10 -translate-y-[50%] text-center mx-auto">
-        <h3 className="text-[42px] xl:text-[70px] leading-[90px] text-white">
+    <div className="relative rounded-[10px] h-[250px] lg:h-max">
+      <div className="absolute top-[55%] lg:top-[50%] z-10 -translate-y-[50%] w-full text-center mx-auto">
+        <h3 className="text-[21px] lg:text-[3rem] xl:px-10 xl:text-[4.5rem] lg:leading-[60px] xl:leading-[90px]  text-white">
           Level up your style with our summer collections
         </h3>
-        <button className="mt-4 xl:mt-8 bg-white rounded-[5px] text-[#505050] py-3 px-8">
+        <button className="mt-4 lg:mt-6 xl:mt-8 bg-white rounded-[5px] text-[#505050] py-3 px-8">
           Shop Now
         </button>
       </div>
-      <div className="embla">
+      <div className="embla ">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex h-auto w-full embla__container space-x-4">
+          <div className="flex lg:h-auto w-full embla__container space-x-4">
             <div className="embla__slide">
               {/* overlay */}
-              <div className="bg-black/20 w-full h-[492px] rounded-[10px] absolute inset-0"></div>
-              <img src={HeroImg} alt="hero 1" />
+              <div className="bg-black/20 h-full rounded-[10px] absolute inset-0 "></div>
+              <img
+                src={HeroImg}
+                alt="hero 1"
+                className="w-full lg:h-full h-[250px] object-cover"
+              />
             </div>
             <div className="embla__slide">
               {/* overlay */}
-              <div className="bg-black/20 w-full h-[492px] rounded-[10px] absolute inset-0"></div>
-              <img src={HeroImg} alt="hero 1" />
+              <div className="bg-black/20 h-full rounded-[10px] absolute inset-0"></div>
+              <img
+                src={HeroImg}
+                alt="hero 1"
+                className="w-full lg:h-full h-[250px] object-cover"
+              />
             </div>
             <div className="embla__slide">
               {/* overlay */}
-              <div className="bg-black/20 w-full h-[492px] rounded-[10px] absolute inset-0"></div>
-              <img src={HeroImg} alt="hero 1" />
+              <div className="bg-black/20 h-full rounded-[10px] absolute inset-0"></div>
+              <img
+                src={HeroImg}
+                alt="hero 1"
+                className="w-full lg:h-full h-[250px] object-cover"
+              />
             </div>
           </div>
         </div>

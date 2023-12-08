@@ -6,8 +6,8 @@ import Login from "@/pages/Login";
 
 const Layout = () => {
   return (
-    <div className="w-full">
-      <div className="px-[133px] pt-[55px]">
+    <div className="w-full h-screen">
+      <div className="px-[20px] lg:px-[133px] pt-[55px]">
         <Header />
         <div className="mt-8">
           <Routes>

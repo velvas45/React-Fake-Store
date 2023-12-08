@@ -23,10 +23,10 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 grid-rows-1 gap-12 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-12 items-center">
       {/* FORM LOGIN */}
       <div
-        className="px-10 py-12 rounded-[9px] h-max"
+        className="px-10 py-12 rounded-[9px] h-max w-full"
         style={{ boxShadow: "0px 0px 40px 0px rgba(239, 240, 241, 0.70)" }}
       >
         <h2 className="text-center text-[26px] text-[#181C32] font-bold">
@@ -76,7 +76,7 @@ const Login = () => {
           Sign In
         </button>
       </div>
-      <div>
+      <div className="order-1 -order-1">
         <img src={loginBg} alt="login" className="mix-blend-multiply" />
       </div>
     </div>
